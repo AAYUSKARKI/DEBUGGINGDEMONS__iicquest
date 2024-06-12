@@ -29,9 +29,34 @@ function Appointment() {
             <input id="address" type="text" placeholder='Address' className='p-2 w-full h-12 rounded-md' />
           </div>
 
+<<<<<<< HEAD
           <button className='bg-blue-500 text-white p-2 rounded-md mt-4'>Send Appointment Form</button>
         </div>
       </section>
+=======
+    <div className='flex justify-center items-center gap-8'>
+      <label htmlFor="">Name:</label>
+      <input type="text" placeholder='Username' className='ml-10 p-2 w-full h-12 rounded-md' />
+    </div>
+
+
+    <div className='flex justify-center items-center gap-8'>
+      <label htmlFor="">Address:</label>
+      <input type="text" placeholder='Address' className=' ml-8 p-2 w-full h-12 rounded-md' />
+    </div>
+
+    <div className='flex '>
+      <label htmlFor="">Date of Birth :</label>
+      <input type="date" className='w-full ml-10 p-2 rounded-md' />
+    </div>
+    <button className='bg-blue-700 mx-auto p-3 rounded-md text-white hover:bg-blue-600'>submit appointment</button>
+
+
+</div>
+</section>
+
+    
+>>>>>>> afc351e8fed1f09f23d5be257c56ced8686150e4
     </>
   )
 }
