@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 
 const quoteSchema=new Schema({
 
-    quotename:{
+    quote:{
         type:String
     },
     author:{
         type:String
     }
 })
-export const quote= mongoose.model("Quote",quoteSchema)
+export const Quote= mongoose.model("Quote",quoteSchema)
