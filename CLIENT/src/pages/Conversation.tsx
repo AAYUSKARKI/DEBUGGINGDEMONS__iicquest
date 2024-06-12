@@ -3,12 +3,12 @@ import ConversationItem from './ConversationItem';
 const Conversation = () => {
 
     const data = [
-        {name:'Rey Jhon',time:'just now', message: 'Hey there! Are you finish creating the chat app?', active: true},
-        {name:'Cherry Ann',time:'12:00', message: 'Hello? Are you available tonight?'},
-        {name:'Lalaine',time:'yesterday', message: 'I\'m thingking of resigning'},
-        {name:'Princess',time:'1 day ago', message: 'I found a job :)'},
-        {name:'Charm',time:'1 day ago', message: 'Can you me some chocolates?'},
-        {name:'Garen',time:'1 day ago', message: 'I\'m the bravest of all kind'},
+        {name:'Aayush',time:'just now', message: 'Hey there! ', active: true},
+        {name:'Saurav',time:'12:00', message: 'Hello? Are you available'},
+        {name:'Sandesh',time:'yesterday', message: 'I am having some issues'},
+        {name:'Jiwan',time:'1 day ago', message: 'Lets play chess tonight :)'},
+        {name:'Ganesh',time:'1 day ago', message: 'Are you available toinght'},
+        {name:'Anish',time:'1 day ago', message: 'I\'m the bravest of all kind'},
     ]
 
     return (
