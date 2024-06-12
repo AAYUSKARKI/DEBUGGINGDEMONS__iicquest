@@ -10,5 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
     <Toaster/>
     <MentalHealthMCQ/>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

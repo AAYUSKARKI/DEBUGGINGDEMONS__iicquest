@@ -33,7 +33,7 @@ const MentalHealthMCQ = () => {
   
     return (
       <div className="mental-health-mcq">
-        <h2>Mental Health Check-In</h2>
+        <h2 className="m-auto">Mental Health Check-In</h2>
         <p>Please answer the following questions honestly to assess your current well-being.</p>
         {questions.map((question, index) => (
           <div key={index} className="mcq-question">
