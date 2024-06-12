@@ -1,15 +1,11 @@
-import React from 'react'
+
 import { FaArrowCircleRight } from "react-icons/fa";
-=======
->>>>>>> 3499c9f080dfda23b363399ca180049f42c01fb2
 
 function HomePage() {
   return (
    <>
-  
    <section className=' flex flex-col gap-6 bg-black h-[100vh] justify-center '>
-  <div className='flex  mx-auto gap-12'>
-
+   <div className='flex  mx-auto gap-12'>
   <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4 ' >
        <div className='flex flex-col gap-3 '>
         <h1 className='mx-auto font-bold text-2xl'>To Do List</h1>
