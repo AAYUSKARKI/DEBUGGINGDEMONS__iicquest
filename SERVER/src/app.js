@@ -21,8 +21,12 @@ app.use(cookieParser())
 //import routes
 import Qouterouter from "./routes/quote.route.js";
 import Userrouter from "./routes/user.route.js";
+import appointmentRouter from "./routes/appointment.route.js"
+import chatRouter from "./routes/appointment.route.js"
 
 app.use("/api/v1/users",Userrouter)
 app.use("/api/v1/quotes",Qouterouter)
+app.use("/api/v1/appointment",appointmentRouter)
+app.use("/api/v1/chatRouter",chatRouter)
 
 export { app }

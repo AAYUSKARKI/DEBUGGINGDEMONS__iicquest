@@ -29,6 +29,8 @@ function Appointment() {
       <input type="date" />
     </div>
 
+
+<button>Send an Appointment form</button>
     
     </>
   )
