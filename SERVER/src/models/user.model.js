@@ -22,10 +22,16 @@ const userSchema= new Schema({
         lowercase:true
         
       },
+      avatar:{
+        type:String
+      },
+      role:{
+       type:String,enum:["doctor","user"]
+      },
       refreshToken:{
        type:String
       },
-    
+
 },
 {
     timestamps:true
