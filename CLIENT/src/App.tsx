@@ -7,15 +7,11 @@ import MentalHealthMCQ from "./components/MCQ/mcq"
 import HomePage from "./pages/HomePage"
 import SignUp from "./pages/SignUp"
 import Appointment from "./pages/Appointment"
-<<<<<<< HEAD
 import Subscription from "./pages/Subscription"
-=======
 import Navbar from "./components/Navbar"
-<<<<<<< HEAD
 import Dailytask from "./pages/Dailytask"
-=======
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
->>>>>>> eece496c9d3de43ebbcec5bf4ed64def11b8d49f
+import Chat from './pages/Chat'
+import Collaboration from "./pages/Collaboration"
 function App() {
 
   // useEffect(() => {
@@ -38,14 +34,10 @@ function App() {
           <Route path="/HomePage" element={<HomePage/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/appointment" element={<Appointment/>}/>
-<<<<<<< HEAD
           <Route path="/dailytask" element={<Dailytask/>}/>
-=======
-<<<<<<< HEAD
           <Route path= "/subscription" element= {<Subscription/>}/>
-=======
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
->>>>>>> eece496c9d3de43ebbcec5bf4ed64def11b8d49f
+          <Route path= "/chat" element= {<Chat/>}/>
+          <Route path= "/collaborator" element= {<Collaboration/>}/>
         </Routes>
       </BrowserRouter>
     </>
