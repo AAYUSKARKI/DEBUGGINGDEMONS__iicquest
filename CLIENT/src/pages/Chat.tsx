@@ -39,7 +39,7 @@ const Chat = () => {
               </div>
               <div className="w-80 h-screen dark:bg-gray-800 bg-gray-100 p-2 hidden md:block">
                   <div className="h-full overflow-y-auto">
-                      <div className="text-xl font-extrabold text-gray-600 dark:text-gray-200 p-3">Chikaa</div>
+                      <div className="text-xl font-extrabold text-gray-600 dark:text-gray-200 p-3">Healing Minds</div>
                       <div className="search-chat flex p-3">
                           <input className="input text-gray-700 dark:text-gray-200 text-sm p-3 focus:outline-none bg-gray-200 dark:bg-gray-700  w-full rounded-l-md" type="text" placeholder="Search Messages"/>
                           <div className="bg-gray-200 dark:bg-gray-700 flex justify-center items-center pr-3 text-gray-400 rounded-r-md">
