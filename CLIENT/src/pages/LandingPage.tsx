@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react"
 import axios from "axios"
 import {useSelector} from "react-redux"
+import { Link } from "react-router-dom"
 function LandingPage() {
 
   const [fact, setFact] = useState([] as any)
@@ -30,8 +31,8 @@ function LandingPage() {
         <p className="text-3xl font-bold">"{fact.quote}"</p>
         <p className="text-xl font-semibold text-green-400">- {fact.author}</p>
             <div className='flex  gap-2'>
-                <button className='bg-white text-black p-2 rounded-md w-60 font-bold  hover:bg-slate-400'>Get started</button>
-                <button className='bg-slate-700  text-white p-2 rounded-md w-32 font-bold  hover:bg-slate-800'>view plans</button>
+                <Link to={"/login"} className='bg-white text-black p-4 rounded-md w-60 font-bold  text-2xl hover:bg-slate-400'>Get started</Link>
+                <Link to={"/subscription"} className='bg-slate-700  text-white p-4 rounded-md w-44 font-bold text-2xl hover:bg-slate-800'>view plans</Link>
             </div>
 
         </div>
