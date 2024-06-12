@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d2074485faa811c62794e38839191b0b222c285
 import React from 'react'
 import { FaArrowCircleRight } from "react-icons/fa";
-=======
->>>>>>> 3499c9f080dfda23b363399ca180049f42c01fb2
 
 function HomePage() {
   return (
