@@ -33,7 +33,6 @@ function Appointment() {
       <input type="text" placeholder='Address' className=' ml-8 p-2 w-full h-12 rounded-md' />
     </div>
 
-<<<<<<< HEAD
     <div className='flex '>
       <label htmlFor="">Date of Birth :</label>
       <input type="date" className='w-full ml-10 p-2 rounded-md' />
@@ -44,10 +43,6 @@ function Appointment() {
 </div>
 </section>
 
-=======
-
-<button>Send an Appointment form</button>
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
     
     </>
   )
