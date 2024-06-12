@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage"
 import SignUp from "./pages/SignUp"
 import Appointment from "./pages/Appointment"
 import Navbar from "./components/Navbar"
+import Dailytask from "./pages/Dailytask"
 function App() {
 
   // useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/HomePage" element={<HomePage/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/appointment" element={<Appointment/>}/>
+          <Route path="/dailytask" element={<Dailytask/>}/>
         </Routes>
       </BrowserRouter>
     </>
