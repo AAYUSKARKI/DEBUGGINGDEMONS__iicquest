@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-import React from 'react'
 
 function HomePage() {
   return (
@@ -25,4 +22,3 @@ function HomePage() {
 }
 
 export default HomePage
->>>>>>> fbc7dc21f355102bc22b7a2234e203bfac8bc0ce

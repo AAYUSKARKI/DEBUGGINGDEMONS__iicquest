@@ -3,7 +3,7 @@ import { Apierror } from "../utils/apierror.js";
 import { User } from "../models/user.model.js";
 import { Apiresponse } from "../utils/apiresponse.js";
 import jwt from "jsonwebtoken";
-import { sendEmail } from "../lib/sendEmail.js";
+import { sendEmail} from "../utils/sendemail.js";
 import bcrypt from "bcryptjs"; // Ensure bcrypt is imported for password hashing
 
 const generateAccessAndRefreshToken = async (userId) => {
