@@ -1,7 +1,6 @@
 import { asynchandler } from "../utils/asynchandler.js";
 import { Apierror } from "../utils/apierror.js";
 import { User } from "../models/user.model.js";
-import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Apiresponse } from "../utils/apiresponse.js";
 import jwt from "jsonwebtoken";
 import { sendEmail } from "../lib/sendEmail.js";
@@ -36,19 +35,7 @@ const registerUser = asynchandler(async (req, res) => {
     if (existedUser) {
         throw new Apierror(409, "User with Email or Username already exists");
     }
-
-    const avatarLocalPath = req.files?.avatar[0]?.path;
-    if (!avatarLocalPath) {
-        throw new Apierror(400, "Avatar file is required");
-    }
-
-    const avatar = await uploadOnCloudinary(avatarLocalPath);
-    if (!avatar) {
-        throw new Apierror(400, "Avatar file not uploaded");
-    }
-
     const user = await User.create({
-        avatar: avatar.url,
         email,
         password,
         username: username.toLowerCase()
@@ -59,7 +46,7 @@ const registerUser = asynchandler(async (req, res) => {
         throw new Apierror(500, "Something went wrong while registering a user");
     }
 
-    await sendEmail(email, "Welcome to LucidMerch", `Thanks for registering with us, ${username}`);
+    await sendEmail(email, "Welcome to IICQuest", `Thanks for registering with us, ${username}`);
 
     return res.status(201).json(new Apiresponse(200, createdUser, "User registered successfully"));
 });
@@ -238,28 +225,6 @@ const updateaccountdetails = asynchandler(async (req, res) => {
     return res.status(200).json(new Apiresponse(200, user, "Account details updated successfully"));
 });
 
-const updateuseravatar = asynchandler(async (req, res) => {
-    const avatarLocalPath = req.file?.path;
-
-    if (!avatarLocalPath) {
-        throw new Apierror(400, "Avatar file is missing");
-    }
-
-    const avatar = await uploadOnCloudinary(avatarLocalPath);
-
-    if (!avatar.url) {
-        throw new Apierror(400, "Error while uploading avatar");
-    }
-
-    const user = await User.findByIdAndUpdate(
-        req.user?._id,
-        { $set: { avatar: avatar.url } },
-        { new: true }
-    ).select("-password");
-
-    return res.status(200).json(new Apiresponse(200, user, "Avatar updated successfully"));
-});
-
 const getallusers = asynchandler(async (req, res) => {
     const users = await User.find({});
     return res.status(200).json(new Apiresponse(200, users, "All users fetched successfully"));
@@ -276,19 +241,9 @@ const getuserbyid = asynchandler(async (req, res) => {
 const updateuser = asynchandler(async (req, res) => {
     const { username, email, password } = req.body;
 
-    const avatarLocalPath = req.files?.avatar[0]?.path;
-    if (!avatarLocalPath) {
-        throw new Apierror(400, "Avatar file is required");
-    }
-
-    const avatar = await uploadOnCloudinary(avatarLocalPath);
-    if (!avatar) {
-        throw new Apierror(400, "Avatar file not uploaded");
-    }
-
     const user = await User.findByIdAndUpdate(
         req.params.id,
-        { $set: { username, email, password, avatar: avatar.url } },
+        { $set: { username, email, password} },
         { new: true }
     ).select("-password");
 
@@ -315,7 +270,6 @@ export {
     changecurrentpassword,
     getcurrentuser,
     updateaccountdetails,
-    updateuseravatar,
     getallusers,
     getuserbyid,
     updateuser,
