@@ -19,4 +19,4 @@ const appointmentSchema=new Schema({
      type:Date
     }
 })
-export const appointment=mongoose.model("Appointment",appointmentSchema)
+export const Appointment=mongoose.model("Appointment",appointmentSchema)
