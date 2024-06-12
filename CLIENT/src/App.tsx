@@ -8,18 +8,8 @@ import HomePage from "./pages/HomePage"
 import SignUp from "./pages/SignUp"
 import Appointment from "./pages/Appointment"
 import Navbar from "./components/Navbar"
-<<<<<<< HEAD
 import Subscription from "./pages/Subscription"
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import Dailytask from "./pages/Dailytask"
-=======
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
->>>>>>> eece496c9d3de43ebbcec5bf4ed64def11b8d49f
->>>>>>> 2cb38ed8ebce45b85a4855fe754998a6f8b7062b
->>>>>>> 03b423a2cb22477a776ad8d18c53cba8ef706771
 function App() {
 
   // useEffect(() => {
@@ -42,21 +32,9 @@ function App() {
           <Route path="/HomePage" element={<HomePage/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/appointment" element={<Appointment/>}/>
-<<<<<<< HEAD
           <Route path= "/subscription" element= {<Subscription/>}/>
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
           <Route path="/dailytask" element={<Dailytask/>}/>
-=======
-<<<<<<< HEAD
           <Route path= "/subscription" element= {<Subscription/>}/>
-=======
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
->>>>>>> eece496c9d3de43ebbcec5bf4ed64def11b8d49f
->>>>>>> 2cb38ed8ebce45b85a4855fe754998a6f8b7062b
->>>>>>> 03b423a2cb22477a776ad8d18c53cba8ef706771
         </Routes>
       </BrowserRouter>
     </>

@@ -29,7 +29,6 @@ function Appointment() {
             <input id="address" type="text" placeholder='Address' className='p-2 w-full h-12 rounded-md' />
           </div>
 
-<<<<<<< HEAD
     <div className='flex justify-center items-center gap-8'>
       <label htmlFor="">Name:</label>
       <input type="text" placeholder='Username' className='ml-10 p-2 w-full h-12 rounded-md' />
@@ -52,11 +51,6 @@ function Appointment() {
 </section>
 
     
-=======
-          <button className='bg-blue-500 text-white p-2 rounded-md mt-4'>Send Appointment Form</button>
-        </div>
-      </section>
->>>>>>> 03b423a2cb22477a776ad8d18c53cba8ef706771
     </>
   )
 }
