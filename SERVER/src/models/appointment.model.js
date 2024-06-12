@@ -4,16 +4,19 @@ import mongoose, { Schema } from "mongoose";
 const appointmentSchema=new Schema({
 
     username:{
-      type:String,
+     type:String,
     },
-    age:{
+    appointmentDate:{
+    type:Date
+    },
+    appointmenttime:{
+     type:Date,
+    },
+    address:{
         type:Number,
     },
-    gender:{
-        type:String
-    },
-    symptoms:{
-     type:String
+    dateofbirth:{
+     type:Date
     }
 })
 export const appointment=mongoose.model("Appointment",appointmentSchema)
