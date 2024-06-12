@@ -23,7 +23,11 @@ function Subscription() {
 //         </div>
 //    </section>
 <section className='flex gap-8 h-[100vh] mx-5 my-5 justify-center items-center'>
-    
+{/* <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 className="display-4 fw-normal text-body-emphasis">Pricing</h1>
+      <p className="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    </div>
+     */}
 <div className="col">
         <div className="card mb-4 rounded-3 shadow-sm border-primary">
           <div className="card-header py-3 text-bg-primary border-primary">

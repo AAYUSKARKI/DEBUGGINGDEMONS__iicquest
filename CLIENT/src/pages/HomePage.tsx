@@ -1,9 +1,5 @@
 import React from 'react'
 import { FaArrowCircleRight } from "react-icons/fa";
-<<<<<<< HEAD
-
-=======
->>>>>>> d9966a7fdac6b8ea1c6a194b30710ca1a4dc7738
 function HomePage() {
   return (
    <>
