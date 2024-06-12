@@ -3,9 +3,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
+import SignUp from "./pages/SignUp"
+
 import MentalHealthMCQ from "./components/MCQ/mcq"
 import HomePage from "./pages/HomePage"
-import SignUp from "./pages/SignUp"
+
 function App() {
 
   // useEffect(() => {

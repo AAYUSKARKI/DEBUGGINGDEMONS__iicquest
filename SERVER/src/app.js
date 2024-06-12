@@ -20,6 +20,9 @@ app.use(cookieParser())
 
 //import routes
 import Qouterouter from "./routes/quote.route.js";
+import Userrouter from "./routes/user.route.js";
+
+app.use("/api/v1/users",Userrouter)
 app.use("/api/v1/quotes",Qouterouter)
 
 export { app }
