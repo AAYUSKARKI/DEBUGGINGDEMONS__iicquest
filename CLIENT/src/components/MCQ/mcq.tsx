@@ -32,13 +32,17 @@ const MentalHealthMCQ = () => {
     ];
   
     return (
-      <div className="mental-health-mcq">
-        <h2 className="m-auto">Mental Health Check-In</h2>
-        <p>Please answer the following questions honestly to assess your current well-being.</p>
+      <div  >
+
+     <div className="flex justify-center items-center">  
+     <div className="flex  flex-col m-5 gap-3 bg-slate-300 p-4 rounded-md">
+      <h2 className="m-auto  text-4xl font-bold my-4">Mental Health Check-In</h2>
+        <div className="flex  flex-col ">
+        <p className="font-bold text-3xl">Please answer the following questions honestly to assess your current well-being.</p>
         {questions.map((question, index) => (
-          <div key={index} className="mcq-question">
+          <div key={index} className="font-bold text-2xl">
             <p>{question.question}</p>
-            <ul>
+            <ul className="text-xl text-slate-700 font-md">
               {question.options.map((option, optionIndex) => (
                 <li key={optionIndex}>
                   <input type="radio" name={`question-${index}`} value={option} /> {option}
@@ -47,6 +51,9 @@ const MentalHealthMCQ = () => {
             </ul>
           </div>
         ))}
+        </div>
+      </div>
+     </div>
       </div>
     );
   };
