@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useState} from 'react'
 function SignUp() {
 
@@ -78,7 +78,7 @@ function SignUp() {
 <br />
             
 
-            <p>Alredy have account ? <button className='text-blue-600'>login</button></p>
+            <p>Alredy have account ? <Link to={"/login"} className='text-blue-600'>login</Link></p>
         </form>
     </div>
 </section>
