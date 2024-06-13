@@ -40,6 +40,7 @@ function App() {
           <Route path="/secondstage" element={<StageSecond/>}/>
           <Route path="/thirdstage" element={<StageThird/>}/>
           <Route path="/faq" element={<FAQ/>}/>
+          
 
 
 
