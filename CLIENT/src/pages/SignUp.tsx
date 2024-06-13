@@ -22,7 +22,7 @@ function SignUp() {
     try {
       const response = await axios.post("http://localhost:7000/api/v1/users/register",user)
       console.log(response.data.data)
-      toast.success("login success")
+      toast.success("signup success")
       navigate("/login")
     } catch (error) {
       console.log(error)
@@ -74,7 +74,7 @@ function SignUp() {
             <br />
             <button className='bg-blue-700 p-2  h-14 rounded-md hover:bg-blue-600 text-white font-bold'>create account</button>
 
-            <p className='m-auto text-blue-600'>Forgot password ?</p>
+            {/* <p className='m-auto text-blue-600'>Forgot password ?</p> */}
 <br />
             
 

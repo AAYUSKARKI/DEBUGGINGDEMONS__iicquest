@@ -3,18 +3,21 @@ import {Apierror} from "../utils/apierror.js"
 import { Apiresponse } from "../utils/apiresponse.js";
 import { Appointment } from "../models/appointment.model.js";
 
-const createappointment = asynchandler(async (req, res) => {
-    const { username, age, gender, symptoms } = req.body;
+const createappointment = asynchandler(async (req, res) =>{
 
-    if (!username || !age || !gender || !symptoms) {
+    const {name,address,appointmentDate,appointmentTime} = req.body;
+
+    console.log(req.body)
+
+    if (!name || !address || !appointmentDate || !appointmentTime) {
         throw new Apierror(400, "All fields are required");
     }
 
     const appointment = await Appointment.create({
-        username,
-        age,
-        gender,
-        symptoms
+        username:name,
+        address,
+        appointmentDate,
+        appointmenttime:appointmentTime
     });
 
     if(!appointment){
@@ -34,5 +37,4 @@ const getallappointments = asynchandler(async (req, res) => {
     return res.status(200).json(new Apiresponse(200, appointments, "Appointments fetched successfully"));
 });
 
-
-export { createappointment }
+export { createappointment, getallappointments }

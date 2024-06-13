@@ -12,6 +12,7 @@ import Dailytask from "./pages/Dailytask";
 // import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
 import Home from "./components/chat/Home";
+import VideoChat from "./components/webrtc/Index";
 import StageFirst from "./pages/surveyStage/Stage1";
 import StageSecond from "./pages/surveyStage/Stage2";
 import StageThird from "./pages/surveyStage/Stage3";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/collaborator" element={<Collaboration />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/message" element={<Home />} />
+          <Route path="/webrtc" element={<VideoChat />} />
           <Route path="/firststage" element={<StageFirst/>}/>
           <Route path="/secondstage" element={<StageSecond/>}/>
           <Route path="/thirdstage" element={<StageThird/>}/>

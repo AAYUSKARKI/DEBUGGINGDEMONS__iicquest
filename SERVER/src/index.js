@@ -17,9 +17,14 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
   
+  socket.on('join-room', data => {
+    socket.broadcast.emit('signal', data);
+  });
+  
   socket.on('feedback', (data) => {
     console.log(data)
     socket.broadcast.emit('typing', data)
+    
   })
 
   

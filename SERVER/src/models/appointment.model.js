@@ -7,16 +7,13 @@ const appointmentSchema=new Schema({
      type:String,
     },
     appointmentDate:{
-    type:Date
+    type:String
     },
     appointmenttime:{
-     type:Date,
+     type:String,
     },
     address:{
-        type:Number,
-    },
-    dateofbirth:{
-     type:Date
+        type:String,
     }
 })
 export const Appointment=mongoose.model("Appointment",appointmentSchema)
