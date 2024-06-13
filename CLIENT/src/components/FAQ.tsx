@@ -42,8 +42,8 @@ const FAQ = () => {
 
   return (
     <div >
-      <h2>How can we help you?</h2>
-      <Searchbar onSearchChange={handleSearchChange} />
+      <h1 className='font-bold text-3xl text-center'>How can we help you?</h1>
+    <Searchbar onSearchChange={handleSearchChange} />
       <section className='faq'>
         {searchResults.map(item=> (
           <Question key={item.id} question={item.question} answer={item.answer} />

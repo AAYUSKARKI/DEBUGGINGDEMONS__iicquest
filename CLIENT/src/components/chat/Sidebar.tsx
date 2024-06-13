@@ -11,7 +11,7 @@ function Otherusers() {
     <>
    <div className=' flex  flex-col w-[20vw]  bg-slate-700 h-full'>
     <h1 className='flex gap-2 text-3xl font-bold  p-8 bg-slate-500 w-full'><FaRegUserCircle/> Users</h1>
- <div className='text-black'>
+ <div className='font-serif font-semibold text-red-500'>
  {otheruser?.map((user:any)=>(
         <Otheruser key={user._id} user={user}/>
     ))}

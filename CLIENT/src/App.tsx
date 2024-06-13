@@ -14,10 +14,6 @@ import Dailytask from "./pages/Dailytask";
 // import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
 import Home from "./components/chat/Home";
-<<<<<<< HEAD
-
-=======
->>>>>>> d9a76f3114ff15d499018326ccc8f0d46fbd7871
 import StageFirst from "./pages/surveyStage/Stage1";
 import StageSecond from "./pages/surveyStage/Stage2";
 import StageThird from "./pages/surveyStage/Stage3";
@@ -40,10 +36,6 @@ function App() {
           <Route path="/collaborator" element={<Collaboration />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/message" element={<Home />} />
-<<<<<<< HEAD
-          
-=======
->>>>>>> d9a76f3114ff15d499018326ccc8f0d46fbd7871
           <Route path="/firststage" element={<StageFirst/>}/>
           <Route path="/doctorchat" element={<Doctorhome/>}/>
           <Route path="/secondstage" element={<StageSecond/>}/>
