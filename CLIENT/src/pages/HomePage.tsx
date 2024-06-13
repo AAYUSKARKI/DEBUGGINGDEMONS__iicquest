@@ -11,7 +11,7 @@ function HomePage() {
   <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4 ' >
        <div className='flex flex-col gap-3 '>
         <h1 className='mx-auto font-bold text-2xl'>Appointment</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, voluptates! Aliquam, quasi.</p><br />
+        <p className="text-2xl ">Quick book your Appointment Here</p><br />
         <Link to={"/appointment"} className='flex  gap-3 mx-auto w-24  bg-slate-800 p-2 rounded-md text-white'>Explore < FaArrowCircleRight className='text-2xl'/></Link>
 
        </div>
@@ -20,7 +20,7 @@ function HomePage() {
     <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4' >
        <div className='flex flex-col gap-3 '>
         <h1 className='mx-auto font-bold text-2xl'>Daily Task</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, voluptates! Aliquam, quasi.</p><br />
+        <p className="text-2xl ">Complete Your daily task here & win a Reward</p><br />
         <Link to={"/dailytask"} className='flex  gap-3 mx-auto w-24  bg-slate-800 p-2 rounded-md text-white'>Explore < FaArrowCircleRight className='text-2xl'/></Link>
 
        </div>
@@ -32,7 +32,7 @@ function HomePage() {
 <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4 ' >
      <div className='flex flex-col gap-3 '>
       <h1 className='mx-auto font-bold text-2xl'>Discussion Form</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, voluptates! Aliquam, quasi.</p><br />
+      <p className="text-2xl ">Share your thoughts here and let others help you</p><br />
       <button className='flex  gap-3 mx-auto w-24  bg-slate-800 p-2 rounded-md text-white'><Link to={"/message"}>Explore </Link>< FaArrowCircleRight className='text-2xl'/></button>
 
      </div>
@@ -41,7 +41,7 @@ function HomePage() {
   <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4' >
      <div className='flex flex-col gap-3 '>
       <h1 className='mx-auto font-bold text-2xl'>Survey</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, voluptates! Aliquam, quasi.</p><br />
+      <p className="text-2xl ">Take your survey here & get Proper treatement recommendation  .</p><br />
       <Link to={"/mcq"} className='flex  gap-3 mx-auto w-24  bg-slate-800 p-2 rounded-md text-white'>Explore < FaArrowCircleRight className='text-2xl'/></Link>
 
      </div>
