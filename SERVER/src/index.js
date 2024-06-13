@@ -30,7 +30,14 @@ io.on("connection", (socket) => {
 });
 
 connectdb()
-.then(()=>{
+.then(()=>
+  
+  
+  
+  
+  
+  
+  {
   server.listen(process.env.PORT||5000,()=>{
     console.log(`server is running at port: ${process.env.PORT}`)
   })
