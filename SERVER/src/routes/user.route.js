@@ -13,7 +13,8 @@ import {
     updateuser,
     deleteuser,
     forgetpassword,
-    resetpassword
+    resetpassword,
+    getalldoctors
 }from "../controller/user.controller.js";
 const router = Router()
 
@@ -32,6 +33,7 @@ router.route("/currentuser").get(verifyJWT, getcurrentuser)
 router.route("/updateaccount").patch(verifyJWT, updateaccountdetails)
 router.route("/allusers").get(getallusers)
 router.route("/getuserbyid/:id").get(getuserbyid)
+router.route("/getalldoctors").get(getalldoctors)
 router.route("/deleteuser/:id").delete(verifyJWT, deleteuser)
 router.route("/forgetpassword").post(forgetpassword)
 router.route("/resetpassword/:token").post(resetpassword)

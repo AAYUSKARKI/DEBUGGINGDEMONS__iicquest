@@ -40,9 +40,8 @@ const registerUser = asynchandler(async (req, res) => {
     const user = await User.create({
         email,
         password,
-        username: username.toLowerCase()
+        username: username.toLowerCase(),
     });
-
     const createdUser = await User.findById(user._id).select("-password -refreshtoken");
     if (!createdUser) {
         throw new Apierror(500, "Something went wrong while registering a user");
@@ -191,6 +190,11 @@ const resetpassword = asynchandler(async (req, res) => {
     return res.status(200).json(new Apiresponse(200, {}, "Password reset successfully"));
 });
 
+const getalldoctors = asynchandler(async (req, res) => {
+    const doctors = await User.find({ role: "doctor" });
+    return res.status(200).json(new Apiresponse(200, doctors, "All doctors fetched successfully"));
+});
+
 const changecurrentpassword = asynchandler(async (req, res) => {
     const { oldpassword, newpassword } = req.body;
 
@@ -277,5 +281,6 @@ export {
     updateuser,
     deleteuser,
     forgetpassword,
-    resetpassword
+    resetpassword,
+    getalldoctors
 };

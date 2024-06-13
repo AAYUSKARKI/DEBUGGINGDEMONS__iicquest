@@ -16,6 +16,10 @@ const userSchema= new Schema({
         
         
       },
+      role:{
+       type:String,
+       enum:["doctor","user"]
+      },
       email:{
         type:String,
         required:true,

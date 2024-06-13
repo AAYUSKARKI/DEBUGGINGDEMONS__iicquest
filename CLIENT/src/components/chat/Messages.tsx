@@ -3,23 +3,15 @@ import { setmessage } from '../../redux/Message'
 import socket from '../../utils/socket'
 import Message from './Message'
 import { useSelector, useDispatch } from 'react-redux'
-// import Tone from '../../public/tone.mp3'
-// import { useEffect } from 'react'
 function Messages() {
 
   const dispatch = useDispatch()
-
-  // const audio = new Audio(Tone)
   useGetmessage()
 
-  
   const {message} = useSelector((state: any) => state.message)
   socket.on("new-message", (data) => {
     console.log(data,'socket data from backend')
     dispatch(setmessage([...message, data]))
-    // setTimeout(() => {
-    //   audio.play()
-    // }, 5000);
 })
 
   console.log('message for mapping',message)

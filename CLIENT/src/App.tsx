@@ -5,14 +5,15 @@ import Login from './pages/Login';
 import SignUp from "./pages/SignUp";
 import MentalHealthMCQ from "./components/MCQ/mcq";
 import HomePage from "./pages/HomePage";
+import Doctorhome from "./pages/Doctorhome";
 import Appointment from "./pages/Appointment";
+import Consultant from './pages/Consultant';
 import Subscription from "./pages/Subscription";
 import Navbar from "./components/Navbar";
 import Dailytask from "./pages/Dailytask";
 // import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
 import Home from "./components/chat/Home";
-import VideoChat from "./components/webrtc/Index";
 import StageFirst from "./pages/surveyStage/Stage1";
 import StageSecond from "./pages/surveyStage/Stage2";
 import StageThird from "./pages/surveyStage/Stage3";
@@ -35,12 +36,13 @@ function App() {
           <Route path="/collaborator" element={<Collaboration />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/message" element={<Home />} />
-          <Route path="/webrtc" element={<VideoChat />} />
           <Route path="/firststage" element={<StageFirst/>}/>
+          <Route path="/doctorchat" element={<Doctorhome/>}/>
           <Route path="/secondstage" element={<StageSecond/>}/>
           <Route path="/thirdstage" element={<StageThird/>}/>
           <Route path="/faq" element={<FAQ/>}/>
           
+          <Route path="/consultants" element={<Consultant />} />
 
 
 
