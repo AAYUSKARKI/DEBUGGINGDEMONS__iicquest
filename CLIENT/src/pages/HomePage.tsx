@@ -40,7 +40,7 @@ function HomePage() {
 
   <div className='flex justify-center items-center max-w-md  bg-white rounded-xl shadow-md w-[500px] h-96 p-4' >
      <div className='flex flex-col gap-3 '>
-      <h1 className='mx-auto font-bold text-2xl'>Survey</h1>
+      <h1 className='mx-auto font-bold text-2xl'></h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, voluptates! Aliquam, quasi.</p><br />
       <Link to={"/mcq"} className='flex  gap-3 mx-auto w-24  bg-slate-800 p-2 rounded-md text-white'>Explore < FaArrowCircleRight className='text-2xl'/></Link>
 
