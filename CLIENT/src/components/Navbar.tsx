@@ -17,7 +17,6 @@ const navItems = [
   { id: 2, text: 'Collaborator', path: '/collaborator' },
   { id: 3, text: 'Resources', path: '/resources' },
   { id: 4, text: 'FAQ', path: '/faq' },
-  { id: 5, text: 'Contact', path: '/contact' },
 ];
 
   return (
