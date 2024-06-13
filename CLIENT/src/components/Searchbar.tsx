@@ -9,9 +9,9 @@ const Searchbar = ({ onSearchChange }) => {
   };
 
   return (
-    <form className='flex gap-2'>
+    <form className='flex items-center justify-center gap-2'>
       <input
-        className='searchbar'
+        className='searchbar w-[600px]'
         type='text'
         placeholder='Describe your issue'
         value={value}
