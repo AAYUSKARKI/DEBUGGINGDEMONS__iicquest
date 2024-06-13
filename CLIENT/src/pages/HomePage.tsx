@@ -1,6 +1,7 @@
 
 import { FaArrowCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 function HomePage() {
   return (
@@ -45,6 +46,12 @@ function HomePage() {
 
      </div>
   </div>
+</div>
+
+{/* chat section linked */}
+<div className="container ">
+<Link to={"/chat"} ><IoChatbubbleEllipsesOutline  className="text-black ml-auto text-8xl mr-7 bg-white p-3 rounded-md font-bold"/>
+</Link>
 </div>
     
     </section>  

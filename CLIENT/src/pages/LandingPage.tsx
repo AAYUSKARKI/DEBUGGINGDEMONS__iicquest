@@ -2,6 +2,7 @@ import { useState,useEffect } from "react"
 import axios from "axios"
 import {useSelector} from "react-redux"
 import { Link } from "react-router-dom"
+import logo from "../../../healing.png"
 function LandingPage() {
 
   const [fact, setFact] = useState([] as any)
@@ -25,7 +26,11 @@ function LandingPage() {
   }, [])
 
   return (
-    <section className='h-[100vh] flex justify-center bg-black text-white '>
+    <section className='h-[100vh] flex flex-col justify-center bg-black text-white '>
+      {/* logo  */}
+<div className="flex ">
+    <img src={logo} alt="logo" className="mx-auto" />
+</div>
         <div className='flex flex-col gap-5 justify-center items-center'>
           <h1 className="text-5xl font-bold">Welcome {user?.username ? user?.username : ""} To Healing Minds</h1>
         <p className="text-3xl font-bold">"{fact.quote}"</p>
