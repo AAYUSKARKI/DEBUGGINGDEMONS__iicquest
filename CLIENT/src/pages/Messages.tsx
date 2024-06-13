@@ -1,55 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { createChat, getChat } from './api'; // Update path as necessary
-import socket from './socket';
+import {useGetmessage} from '../Hooks/useGetmessage'
+import { setmessage } from '../redux/Message'
+import socket from '../utils/socket'
+import Message from './Message'
+import { useSelector, useDispatch } from 'react-redux'
+function Messages() {
 
-const Messages = ({ receiverId }) => {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const dispatch = useDispatch()
+  useGetmessage()
 
-  useEffect(() => {
-    const fetchMessages = async () => {
-      const chatData = await getChat(receiverId);
-      setMessages(chatData.data);
-    };
+  const {message} = useSelector((state: any) => state.message)
+  socket.on("new-message", (data) => {
+    console.log(data,'socket data from backend')
+    dispatch(setmessage([...message, data]))
+})
 
-    fetchMessages();
-
-    socket.on('chat', (newChat) => {
-      setMessages((prevMessages) => [...prevMessages, newChat]);
-    });
-
-    return () => {
-      socket.off('chat');
-    };
-  }, [receiverId]);
-
-  const handleSendMessage = async () => {
-    const sender = 'currentUserId'; // Replace with the actual sender ID
-    await createChat(sender, receiverId, newMessage);
-    setNewMessage('');
-  };
-
+  console.log('message for mapping',message)
   return (
-    <div>
-      <div className="messages-list">
-        {messages.map((msg) => (
-          <div key={msg._id} className="message">
-            <div className="message-sender">{msg.senderid}</div>
-            <div className="message-content">{msg.message}</div>
-          </div>
-        ))}
-      </div>
-      <div className="send-message-form">
-        <input
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          placeholder="Type your message"
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-    </div>
-  );
-};
+    <>
+    {message?.map((message:any)=>(
+        <Message key={message._id} messages={message}/>
+    ))}
+    </>
+  )
+}
 
-export default Messages;
+export default Messages

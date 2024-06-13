@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import {Link} from 'react-router-dom'
  
@@ -15,7 +15,7 @@ const Navbar = () => {
 const navItems = [
   { id: 1, text: 'Home', path: '/HomePage' },
   { id: 2, text: 'Collaborator', path: '/collaborator' },
-  { id: 3, text: 'Resources', path: '/resources' },
+  { id: 3, text: 'Consultants', path: '/consultants' },
   { id: 4, text: 'FAQ', path: '/faq' },
 ];
 
