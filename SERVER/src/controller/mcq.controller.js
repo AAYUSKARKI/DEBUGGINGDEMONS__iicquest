@@ -16,36 +16,65 @@ const getAllQuestions = async (req, res) => {
     }
 };
 // Controller function to handle submission of MCQ answers
+// const correctAnswers = [1, 2, 1, 2, 3, 2]; // Example correct answers
+const preliminary = [1, 2, 2, 1, 2, 2];
+const precaution = [1, 1, 1, 1, 1, 1];
+const poststage = [3, 3, 3, 3, 3, 3];
+
 const submitAnswers = async (req, res) => {
     try {
-        // Extract user information (assuming authenticated user)
-        const userId = req.user._id; // Assuming user is authenticated and userId is available in req.user
+        // const userId = req.user._id;
+        const userAnswers = req.body; // Assuming userAnswers is an object with question indices and selected options as strings
+
+        // Get all MCQ questions from the database to map option texts to option numbers
+        const mcqs = await MCQ.find({});
         
-        // Extract answers from request body
-        const { questionId, selectedOption } = req.body;
+        // Map the received answers to option numbers
+        const mappedAnswers = Object.keys(userAnswers).map(questionIndex => {
+            const question = mcqs[questionIndex];
+            if (!question) {
+                throw new Error('Question not found');
+            }
+            const selectedOptionText = userAnswers[questionIndex];
+            const selectedOption = question.options.find(option => option.optionText === selectedOptionText);
+            if (!selectedOption) {
+                throw new Error('Selected option not found');
+            }
+            return selectedOption.optionNumber;
+        });
 
-        // Example: Save user's selected option to database
-        const mcq = await MCQ.findById(questionId);
-        if (!mcq) {
-            return res.status(404).json({ error: 'MCQ question not found' });
+        // Validate the mapped answers
+        let isPreliminary = true;
+        let isPrecaution = true;
+        let isPoststage = true;
+
+        for (let i = 0; i < mappedAnswers.length; i++) {
+            if (mappedAnswers[i] !== preliminary[i]) {
+                isPreliminary = false;
+            }
+            if (mappedAnswers[i] !== precaution[i]) {
+                isPrecaution = false;
+            }
+            if (mappedAnswers[i] !== poststage[i]) {
+                isPoststage = false;
+            }
         }
 
-        // Check if selectedOption is valid for this MCQ
-        const optionExists = mcq.options.some(option => option.optionNumber === selectedOption);
-        if (!optionExists) {
-            return res.status(400).json({ error: 'Invalid selected option' });
+        if (isPreliminary) {
+            res.status(200).json({ message: 'Preliminary stage', redirectTopreliminary: true });
+        } else if (isPrecaution) {
+            res.status(200).json({ message: 'Precaution stage', redirectToprecaution: true });
+        } else if (isPoststage) {
+            res.status(200).json({ message: 'Post stage', redirectTopoststage: true });
+        } else {
+            res.status(200).json({ message: 'Default preliminary', redirectTopreliminary: true });
         }
-
-        // Save answer with user association
-        mcq.user = userId; // Associate MCQ with the authenticated user
-        await mcq.save();
-
-        res.status(200).json({ message: 'Answer submitted successfully' });
     } catch (err) {
         console.error("Error submitting answers", err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
 
 // Controller function to get MCQ answers specific to a user
 const getAnswersByUser = async (req, res) => {

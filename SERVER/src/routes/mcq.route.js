@@ -4,7 +4,7 @@ import {submitAnswers,getAnswersByUser,getAllQuestions} from "../controller/mcq.
 const router = Router()
 
 router.route("/submitanswers").post(submitAnswers)
-router.route("/getquestions").post(getAllQuestions)
+router.route("/getquestions").get(getAllQuestions)
 router.route("/getanswersbyuser").get(getAnswersByUser)
 
 
