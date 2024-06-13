@@ -20,7 +20,7 @@ function Message({messages} : any) {
     <div ref={scroll} className={`chat ${user._id === messages.senderid ? 'chat-start' : 'chat-end'}`}>
     <div className="chat-image avatar">
     <div className="w-10 rounded-full">
-      <img alt="Tailwind CSS chat bubble component" src={messages.senderid===user?._id?user?.avatar:selecteduser?.avatar} />
+      <img alt="Tailwind CSS chat bubble component" src={`https://th.bing.com/th/id/R.ddb8326e45d4ce75b15af2af50eaff89?rik=oGdEKCd9w%2f9TMw&pid=ImgRaw&r=0`} />
     </div>
   </div>
   {messages.file?<div className="chat-bubble"><img src={messages.file} alt="Tailwind CSS chat bubble component"  /></div>:null}

@@ -23,11 +23,14 @@ import Qouterouter from "./routes/quote.route.js";
 import Userrouter from "./routes/user.route.js";
 import appointmentRouter from "./routes/appointment.route.js"
 import chatRouter from "./routes/chat.route.js"
-
+import mcqRouter from './routes/mcq.route.js'
+import rewardRouter from './routes/reward.route.js'
 
 app.use("/api/v1/users",Userrouter)
 app.use("/api/v1/quotes",Qouterouter)
 app.use("/api/v1/appointment",appointmentRouter)
 app.use("/api/v1/chats",chatRouter)
+app.use('/api/v1/reward',rewardRouter)
+app.use('/api/v1/mcq',mcqRouter)
 
 export { app }

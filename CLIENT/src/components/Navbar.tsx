@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-
+import {Link} from 'react-router-dom'
+ 
 const Navbar = () => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
@@ -10,30 +11,30 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  // Array containing navigation items
-  const navItems = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'Collaborator' },
-    { id: 3, text: 'Resources' },
-    { id: 4, text: 'About' },
-    { id: 5, text: 'Contact' },
-  ];
+// Array containing navigation items
+const navItems = [
+  { id: 1, text: 'Home', path: '/' },
+  { id: 2, text: 'Collaborator', path: '/collaborator' },
+  { id: 3, text: 'Resources', path: '/resources' },
+  { id: 4, text: 'About', path: '/about' },
+  { id: 5, text: 'Contact', path: '/contact' },
+];
 
   return (
+    <>
     <div className='bg-black flex justify-between items-center h-24 w-full mx-auto px-4 text-white'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold text-[#00df9a]'>Healing minds.</h1>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex'>
-        {navItems.map(item => (
-          <li
-            key={item.id}
-            className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-          >
-            {item.text}
-          </li>
-        ))}
+      {navItems.map(item => (
+            <Link key={item.id} to={item.path}>
+              <li className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'>
+                {item.text}
+              </li>
+            </Link>
+          ))}
       </ul>
 
       {/* Mobile Navigation Icon */}
@@ -63,6 +64,7 @@ const Navbar = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
