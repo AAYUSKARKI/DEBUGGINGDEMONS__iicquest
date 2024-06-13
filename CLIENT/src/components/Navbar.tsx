@@ -13,10 +13,10 @@ const Navbar = () => {
 
 // Array containing navigation items
 const navItems = [
-  { id: 1, text: 'Home', path: '/' },
+  { id: 1, text: 'Home', path: '/HomePage' },
   { id: 2, text: 'Collaborator', path: '/collaborator' },
   { id: 3, text: 'Resources', path: '/resources' },
-  { id: 4, text: 'About', path: '/about' },
+  { id: 4, text: 'FAQ', path: '/faq' },
   { id: 5, text: 'Contact', path: '/contact' },
 ];
 

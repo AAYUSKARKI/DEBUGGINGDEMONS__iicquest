@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Searchbar from './Searchbar';
 import Question from './Question';
 import './styles.css'
-
 const questions = [
   {
     id: 1,

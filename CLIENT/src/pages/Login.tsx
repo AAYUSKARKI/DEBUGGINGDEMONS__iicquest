@@ -37,7 +37,7 @@ function Login() {
       Cookie.set("refreshToken",response.data.data.refreshtoken)
       dispatch(setuser(response.data.data.user))
       toast.success("login success")
-      navigate("/")
+      navigate("/HomePage")
     } catch (error) {
       console.log(error)
     }
