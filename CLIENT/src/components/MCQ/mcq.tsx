@@ -49,10 +49,13 @@ const MentalHealthMCQ = () => {
                   <input type="radio" name={`question-${index}`} value={option} /> {option}
                 </li>
               ))}
+              <br/>
             </ul>
           </div>
         ))}
+        {/* submit button  */}
         </div>
+        <button className="bg-blue-600 h-12 rounded-md text-white text-2xl font-bold">Submit</button>
       </div>
      </div>
       </div>
