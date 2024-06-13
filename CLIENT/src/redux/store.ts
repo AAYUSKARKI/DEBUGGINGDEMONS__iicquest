@@ -1,5 +1,8 @@
 import { configureStore as ConfigureStore, combineReducers } from "@reduxjs/toolkit"
 import UserReducer from './userSlice'
+import Otheruser from './Otheruser'
+import MessageReducer from './Message'
+import selectedUser from './Selecteduser'
 
 import {
     persistReducer,
@@ -20,6 +23,9 @@ const persistConfig = {
 
 const rootreducer = combineReducers({
     user:persistReducer(persistConfig, UserReducer),
+    otheruser:persistReducer(persistConfig, Otheruser),
+    message:persistReducer(persistConfig, MessageReducer),
+    selecteduser:persistReducer(persistConfig, selectedUser),
 })
 const store = ConfigureStore({
     reducer:rootreducer,
@@ -27,6 +33,7 @@ const store = ConfigureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        
       },
     }),
 });

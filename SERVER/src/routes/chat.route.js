@@ -1,8 +1,11 @@
-import { createchat } from "../controller/chat.controller.js";
-import {Router} from 'express'
-const router=Router()
-Router.route("/createchat").post(createchat)
+import { Router } from "express";
+import { createMessage, getMessages } from "../controller/chat.controller.js";
+
+const router = Router()
+
+router.route("/createmessage").post(createMessage)
+
+router.route("/getmessages").post(getMessages)
 
 
-
-export default router
+export default router 

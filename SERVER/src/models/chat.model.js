@@ -6,11 +6,11 @@ import mongoose, { Schema } from 'mongoose'
 
     senderid:{
         type:Schema.Types.ObjectId,
-        ref:User 
+        ref:'User'
     },
     receiver:{
         type:Schema.Types.ObjectId,
-        ref:User
+        ref:"User"
     },
     message:{
         type:String,
@@ -22,4 +22,4 @@ import mongoose, { Schema } from 'mongoose'
 
 
  })
- export const chat=mongoose.model("Chat",chatSchema)
+ export const Message=mongoose.model("Message",chatSchema)

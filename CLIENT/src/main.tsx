@@ -20,9 +20,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
      <AgoraRTCProvider client={client}>
         <PersistGate loading={null} persistor={persistStore(store)}>
         <App/>
+    
         <Toaster/>
         </PersistGate>
         </AgoraRTCProvider>
       </Provider> 
+    
   </React.StrictMode>,
 )

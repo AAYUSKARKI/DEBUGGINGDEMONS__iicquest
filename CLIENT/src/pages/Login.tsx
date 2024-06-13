@@ -4,7 +4,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import {setuser} from "../redux/userSlice"
 import Cookie from "js-cookie"
 import toast from "react-hot-toast"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
 import { useDispatch } from "react-redux"
 
@@ -83,9 +83,9 @@ function Login() {
           <p className="m-auto text-blue-600">Forgot password ?</p>
           <br />
 
-          <button className="m-auto bg-green-500 p-4 rounded-xl shadow-xl shadow-slate-500">
+          <Link to={"/signup"} className="m-auto bg-green-500 p-4 rounded-xl shadow-xl shadow-slate-500">
             Create New Account
-          </button>
+          </Link>
         </form>
       </div>
     </section>

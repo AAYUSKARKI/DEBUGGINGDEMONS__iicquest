@@ -1,17 +1,26 @@
-import mongoose from mongoose
+import mongoose from 'mongoose';
 
-const taskrewardSchema=new Schema({
+const { Schema } = mongoose;
 
-   taskname:{
-    type:String
-   },
-   status:{
-    type:String,
-    default:"pending",
-    enum:["pending","completed"]
-   }
-},
-{
-    timestamps:true
-})
-export const taskreward=mongoose.model("Taskreward",taskrewardSchema)
+const taskrewardSchema = new Schema({
+    taskname: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        default: "pending",
+        enum: ["pending", "completed"]
+    },
+    points: {
+        type: Number,
+        default: 0
+    },
+    completedAt: {
+        type: Date
+    }
+}, {
+    timestamps: true
+});
+
+export const Taskreward = mongoose.model("Taskreward", taskrewardSchema);

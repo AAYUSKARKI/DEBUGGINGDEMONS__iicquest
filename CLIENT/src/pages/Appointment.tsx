@@ -32,22 +32,7 @@ function Appointment() {
         </div>
       </section>
 
-      {/* Additional Input Fields */}
-      <section className='flex justify-center items-center gap-8'>
-        <label htmlFor="">Name:</label>
-        <input type="text" placeholder='Username' className='ml-10 p-2 w-full h-12 rounded-md' />
-      </section>
-
-      <section className='flex justify-center items-center gap-8'>
-        <label htmlFor="">Address:</label>
-        <input type="text" placeholder='Address' className='ml-8 p-2 w-full h-12 rounded-md' />
-      </section>
-
-      <section className='flex'>
-        <label htmlFor="">Date of Birth:</label>
-        <input type="date" className='w-full ml-10 p-2 rounded-md' />
-      </section>
-      <button className='bg-blue-700 mx-auto p-3 rounded-md text-white hover:bg-blue-600'>Submit Appointment</button>
+      
     </>
   );
 }

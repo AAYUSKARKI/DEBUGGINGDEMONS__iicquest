@@ -1,44 +1,62 @@
-import {io} from '../index.js'
-import {Chat} from '../models/chat.model.js'
+import { asynchandler } from "../utils/asynchandler.js";
+import { Apierror } from "../utils/apierror.js";
+import {Message} from '../models/chat.model.js';
+import { io } from "../index.js";
+import { Apiresponse } from "../utils/apiresponse.js";
 
-const createchat = asynchandler(async (req, res) => {
-    const { sender, receiver, message } = req.body;
+const createMessage = asynchandler(async (req, res) => {
 
-    if (!sender || !receiver || !message) {
-        throw new Apierror(400, "All fields are required");
+    console.log(req.body)
+    const { senderid, receiverid, message } = req.body
+
+    // if (senderid == receiverid) {
+    //   throw new Apierror(400, "cant send message to yourself")
+    // }
+
+    if (!senderid || !receiverid || !message) {
+        throw new Apierror(400, "All fields are required")
     }
 
-    const chat = await Chat.create({
-        senderid: sender,
-        receiver: receiver,
+    const newMessage = new Message({
+        senderid,
+        receiverid,
         message
-    });
+    })
 
-    if(!chat){
-        throw new Apierror(400, "Chat not created");
+   const createdMessage = await newMessage.save()
+
+    if (!createdMessage) {
+        throw new Apierror(500, "something went wrong while creating message")
     }
 
-    io.emit("chat", chat)
-    return res.status(200).json(new Apiresponse(200, chat, "Chat created successfully"));
+    io.emit("new-message", createdMessage)
+    // io.to(createdMessage.receiverid).emit("new-message", createdMessage.message)
 
+    return res.status(201).json(new Apiresponse(200, createdMessage, "created successfully"))
 })
 
-const getchat = asynchandler(async (req, res) => {
-    const senderid = req.user?._id;
-    const receiverid = req.params.id;
+const getMessages = asynchandler(async (req, res) => {
+
+    const { senderid, receiverid } = req.body
+
+    console.log(req.body)
 
     if (!senderid || !receiverid) {
-        throw new Apierror(400, "All fields are required");
+        throw new Apierror(400, "All fields are required")
     }
 
-    const chat = await Chat.find({ $or: [{ senderid, receiverid }, { senderid: receiverid, receiverid: senderid }] });
-    if(!chat){  
-        throw new Apierror(400, "Chat not found");
+    const messages = await Message.find({
+        $or: [
+            { senderid, receiverid },
+            { senderid: receiverid, receiverid: senderid }
+        ]
+    }).sort({ createdAt: 1 })
+
+    if (!messages) {
+        throw new Apierror(500, "something went wrong while getting messages")
     }
 
-    return res.status(200).json(new Apiresponse(200, chat, "Chat fetched successfully"));
+    return res.status(200).json(new Apiresponse(200, messages, "fetched successfully"))
+    })
 
-})
-
-
-export { createchat, getchat }
+export { createMessage, getMessages }
