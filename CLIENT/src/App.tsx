@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Dailytask from "./pages/Dailytask";
 import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
+import Home from "./components/chat/Home";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/collaborator" element={<Collaboration />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/message" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
