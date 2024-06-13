@@ -36,7 +36,6 @@ function App() {
           <Route path="/firststage" element={<StageFirst/>}/>
           <Route path="/secondstage" element={<StageSecond/>}/>
           <Route path="/thirdstage" element={<StageThird/>}/>
-          <Route path="/bot" element={<GenerateImage/>}
 
 
 
