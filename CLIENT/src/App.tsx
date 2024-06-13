@@ -15,6 +15,7 @@ import Home from "./components/chat/Home";
 import StageFirst from "./pages/surveyStage/Stage1";
 import StageSecond from "./pages/surveyStage/Stage2";
 import StageThird from "./pages/surveyStage/Stage3";
+import FAQ from "./components/FAQ";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/firststage" element={<StageFirst/>}/>
           <Route path="/secondstage" element={<StageSecond/>}/>
           <Route path="/thirdstage" element={<StageThird/>}/>
+          <Route path="/faq" element={<FAQ/>}/>
 
 
 
