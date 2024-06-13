@@ -11,7 +11,6 @@ import Navbar from "./components/Navbar";
 import Dailytask from "./pages/Dailytask";
 import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
-
 function App() {
   return (
     <>
