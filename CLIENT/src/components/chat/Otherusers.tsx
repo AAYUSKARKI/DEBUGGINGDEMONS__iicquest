@@ -8,9 +8,11 @@ function Otherusers() {
 
   return (
     <>
-    {otheruser?.map((user:any)=>(
+  <div>
+  {otheruser?.map((user:any)=>(
         <Otheruser key={user._id} user={user}/>
     ))}
+  </div>
     </>
   )
 }

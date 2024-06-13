@@ -56,7 +56,7 @@ function Otheruser({ user }: Props) {
             <img src={user?.avatar} />
           </div>
         </div>
-        <h1 className='text-white text-2xl ml-2'>{user?.username}</h1>
+        <h1 className='text-black text-2xl ml-2'>{user?.username}</h1>
       </div>
     </>
   )

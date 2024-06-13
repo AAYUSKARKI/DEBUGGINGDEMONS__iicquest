@@ -5,6 +5,8 @@ import toast from 'react-hot-toast'
 import Messages from './Messages'
 import socket from '../../utils/socket'
 import { setmessage } from '../../redux/Message'
+import { FaRegUserCircle } from "react-icons/fa";
+
 
 function Messagecontainer() {
 
@@ -56,17 +58,19 @@ function Messagecontainer() {
     <>{
       selecteduser?
     <div className=''>
-      <div className='bg-green-700 flex justify-center items-center'>
-        <h1 className='text-white text-2xl'>{selecteduser.username}</h1>
+      <div className='bg-slate-500  flex justify-center items-center'>
+        <h1 className='flex p-8 gap-2 text-black text-3xl'><FaRegUserCircle/> {selecteduser.username}</h1>
         {
           userTyping && <h1>{userTyping} is typing a message</h1>
         }
         <img src={selecteduser.avatar}  className=' avatar w-10 rounded-full' />
       </div>
-    <div className='bg-slate-400 h-[450px] overflow-auto sm:w-[450px] '>
+    <div className='bg-slate-400 h-[450px] overflow-auto w-[80vw] '>
+        <div className='h-full bg-white'>
         <Messages/>
+        </div>
         <form className='flex items-center justify-center sticky bottom-0' onSubmit={handleSubmit}>
-            <input type='text' name='message' onFocus={handleFocus} onChange={handleChange} value={message} placeholder='message' className='p-2 border border-fuchsia-700 w-full'/>
+            <input type='text' name='message' onFocus={handleFocus} onChange={handleChange} value={message} placeholder='message' className='p-2 border border-slate-700  bg-slate-300 w-full'/>
             <button type='submit' className='p-2 border border-fuchsia-700 text-green-400 bg-red-600'>Send</button>
         </form>
     </div>
