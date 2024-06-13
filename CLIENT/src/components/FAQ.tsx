@@ -5,23 +5,23 @@ import './styles.css'
 const questions = [
   {
     id: 1,
-    question: 'About Pricing',
-    answer: 'Suspendisse ipsum elit, hendrerit id eleifend at, condimentum et mauris. Curabitur et libero vel arcu dignissim pulvinar ut ac leo. In sit amet orci et erat accumsan interdum.',
+    question: 'What are the signs of stress in students?',
+    answer: 'Irritability, changes in sleep patterns, headaches, stomach issues, and difficulty concentrating. Emotional signs include feelings of overwhelm, anxiety, or depression'
   },
   {
     id: 2,
-    question: 'Fix problems & request removals',
-    answer: 'Suspendisse ipsum elit, hendrerit id eleifend at, condimentum et mauris. Curabitur et libero vel arcu dignissim pulvinar ut ac leo. In sit amet orci et erat accumsan interdum.',
+    question: 'How can students manage stress effectively?',
+    answer: 'Regular physical activity, adequate sleep, healthy eating, mindfulness practices, time management skills, and seeking support from friends, family, or mental health professionals.',
   },
   {
     id: 3,
-    question: 'Browse the web',
-    answer: 'Suspendisse ipsum elit, hendrerit id eleifend at, condimentum et mauris. Curabitur et libero vel arcu dignissim pulvinar ut ac leo. In sit amet orci et erat accumsan interdum.',
+    question: 'What are common mental health issues among students?',
+    answer: 'Anxiety, depression, attention deficit hyperactivity disorder (ADHD), and eating disorders. Each of these conditions has specific symptoms and requires appropriate intervention.',
   },
   {
     id: 4,
-    question: 'Search on your phone or tablet',
-    answer: 'Suspendisse ipsum elit, hendrerit id eleifend at, condimentum et mauris. Curabitur et libero vel arcu dignissim pulvinar ut ac leo. In sit amet orci et erat accumsan interdum.',
+    question: 'What are the benefits of mindfulness and meditation for students?',
+    answer: 'Improved focus, reduced stress and anxiety, better emotional regulation, and enhanced overall well-being. Practices can include meditation, deep breathing exercises, or yoga.',
   },
 ];
 
