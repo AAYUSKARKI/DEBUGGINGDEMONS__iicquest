@@ -9,7 +9,7 @@ import Appointment from "./pages/Appointment";
 import Subscription from "./pages/Subscription";
 import Navbar from "./components/Navbar";
 import Dailytask from "./pages/Dailytask";
-import Chat from './pages/Chat';
+// import Chat from './pages/Chat';
 import Collaboration from "./pages/Collaboration";
 import Home from "./components/chat/Home";
 import StageFirst from "./pages/surveyStage/Stage1";
@@ -29,7 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/dailytask" element={<Dailytask />} />
-          <Route path="/chat" element={<Chat />} />
+          {/* <Route path="/chat" element={<Chat />} /> */}
           <Route path="/collaborator" element={<Collaboration />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/message" element={<Home />} />
